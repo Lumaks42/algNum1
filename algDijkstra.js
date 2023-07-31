@@ -23,6 +23,7 @@ function shortPath(graph, start, end) {
             costs[node] = value || 10000000
         }
     })
+    // ищем узел с минимальной стоимостью
     let node = findNodeLovestCost(costs, processed)
     while(node){
         const cost = costs[node]
@@ -33,6 +34,7 @@ function shortPath(graph, start, end) {
                 costs[neighbor] = newCost
             }
         })
+        // помечаем как обработанный
         processed.push(node)
         node = findNodeLovestCost(costs, processed)
     }
