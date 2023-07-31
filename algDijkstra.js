@@ -11,9 +11,12 @@ graph.f = {g: 1}
 graph.g = {}
 
 function shortPath(graph, start, end) {
+    // Минимальные стоимости всех ребер
     const costs = {}
+    // Массив, который хранит обработанные объекты
     const processed = []
     let neighbors = {}
+    // Объект, который добавляет ближайших соседий
     Object.keys(graph).forEach(node => {
         if(node !== start){
             let value = graph[start][node]
